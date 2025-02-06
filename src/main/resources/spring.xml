@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.useAnnotation"></context:component-scan>
+    <bean id="doctor" class="org.useSetter.Doctor">
+        <property name="qualification" value="MBBS"></property>
+        <property name="nurse" ref="nurse"></property>
+    </bean>
+    <bean id="nurse" class="org.useSetter.Nurse">
+        <property name="work" value="help"></property>
+    </bean>
+    <bean id="books" class="org.useConstructor.Books">
+        <constructor-arg value="six"></constructor-arg>
+    </bean>
+    <bean id="uniform" class="org.useConstructor.Uniform">
+        <constructor-arg value="8"></constructor-arg>
+    </bean>
+</beans>
